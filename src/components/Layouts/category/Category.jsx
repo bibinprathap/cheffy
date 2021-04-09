@@ -3,23 +3,23 @@ import { Row, Col } from "antd";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { foodCategories } from "../../../redux/actions/food";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 
 function Category(props) {
-  const router = useRouter();
+  //const router = useRouter();
 
-  const [categoriesArray, setCategoriesArray] = useState([]);
+  ///const [categoriesArray, setCategoriesArray] = useState([]);
 
-  async function getCategories() {
-    const categories = await props.dispatch(foodCategories());
-    setCategoriesArray({ data: categories.data });
-    console.log(categoriesArray);
-  }
+  // async function getCategories() {
+  //   const categories = await props.dispatch(foodCategories());
+  //   setCategoriesArray({ data: categories.data });
+  //   console.log(categoriesArray);
+  // }
 
-  useEffect(() => {
-    getCategories();
-  }, []);
-
+  // useEffect(() => {
+  //   getCategories();
+  // }, []);
+  const { categoriesArray } = props;
   return (
     <div className="h-auto mt-10">
       <header
@@ -69,22 +69,22 @@ function Category(props) {
         </div> */}
 
         <div className="ml-5 flex md:flex-row flex-col md:justify-end justify-center">
-        <div className="sort-button md:ml-3 d-flex align-center md:mb-0 mb-4">
-              <span className="mr-2">
-                <img src="/images/sort.png" width="20px" alt="plus" />
-              </span>{" "}
+          <div className="sort-button md:ml-3 d-flex align-center md:mb-0 mb-4">
+            <span className="mr-2">
+              <img src="/images/sort.png" width="20px" alt="plus" />
+            </span>{" "}
               Sort
             </div>
-            <div className="sort-button md:ml-3 d-flex align-center md:mb-0 mb-4">
-              <span className="mr-2">
-                <img src="/images/dietry.png" width="20px" alt="plus" />{" "}
-              </span>
+          <div className="sort-button md:ml-3 d-flex align-center md:mb-0 mb-4">
+            <span className="mr-2">
+              <img src="/images/dietry.png" width="20px" alt="plus" />{" "}
+            </span>
               Dietry
             </div>
-            <div className="sort-button md:ml-3 d-flex align-center mb-4 md:mb-0 md:mr-3">
-              <span className="mr-2">
-                <img src="/images/dollor.png" width="20px" alt="plus" />
-              </span>{" "}
+          <div className="sort-button md:ml-3 d-flex align-center mb-4 md:mb-0 md:mr-3">
+            <span className="mr-2">
+              <img src="/images/dollor.png" width="20px" alt="plus" />
+            </span>{" "}
               Price Range
             </div>
         </div>
@@ -140,8 +140,8 @@ function Category(props) {
                   </div> */}
                 </Col>
               ) : (
-                ""
-              );
+                  ""
+                );
             })}
         </Row>
         <div
@@ -156,5 +156,10 @@ function Category(props) {
     </div>
   );
 }
+
+
+
+
+
 
 export default Category;

@@ -8,7 +8,7 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(
 	async function (config) {
-		const token = localStorage.getItem('token');
+		//const token = localStorage.getItem('token');
 		const session = await getSession();
 		if (session && session.apiToken) {
 			// console.log('axiosClient session', session.apiToken);
