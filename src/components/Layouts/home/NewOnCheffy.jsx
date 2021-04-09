@@ -28,7 +28,7 @@ const NewOnCheffy = ({ _new }) => {
       >
         <Col className="my-5">
           <label className="font-extrabold text-5xl xs:text-4xl sm:text-4xl lg:text-5xl">
-            New on Cheffy
+            New on jhgh Cheffy
           </label>
         </Col>
       </Row>
